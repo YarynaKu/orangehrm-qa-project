@@ -2,7 +2,7 @@
 
 **Module**: Login & Authentication  
 **Application**: OrangeHRM Open Source Demo (`https://opensource-demo.orangehrmlive.com`)  
-**Author**: Senior QA Engineer  
+**Author**: Yaryna Kushniruk  
 **Last Updated**: 2026-07-22  
 **Status**: Active / Ready for Execution  
 
@@ -35,23 +35,23 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 
 ## 3. Requirements Traceability & Test Case Matrix Summary
 
-| Test Case ID | Req ID | Test Case Title | Category | Priority | Risk (Impact × Likelihood) | Automated? | Status |
+| Test Case ID | Req ID | Test Case Title | Category | Priority | Risk (Impact × Likelihood) | Automated? | Status | Notes
 |---|---|---|---|---|---|---|---|
-| **TC-LOGIN-001** | REQ-LOGIN-01 | User can log in with valid credentials | Positive (Happy Path) | **P1** | High × Low = **High** | Yes | Not Yet Executed |
-| **TC-LOGIN-002** | REQ-LOGIN-02 | System rejects invalid username/password with clear error message | Negative | **P1** | High × Medium = **High** | Yes | Not Yet Executed |
-| **TC-LOGIN-003** | REQ-LOGIN-03 | System blocks submission when username or password field is empty | Boundary / Negative | **P1** | High × Medium = **High** | Yes | Not Yet Executed |
-| **TC-LOGIN-004** | REQ-LOGIN-04 | System handles script/SQL injection payloads safely without crash or bypass | Security / Edge | **P1** | High × High = **Critical** | Yes | Not Yet Executed |
-| **TC-LOGIN-005** | REQ-LOGIN-05 | "Forgot Password" flow is reachable and displays expected confirmation step | Positive / Functional | **P2** | Medium × Medium = **Medium** | No | Not Yet Executed |
-| **TC-LOGIN-006** | REQ-LOGIN-06 | Username and Password fields behave consistently regarding case sensitivity | Edge / Functional | **P2** | Medium × Low = **Medium** | No | Not Yet Executed |
-| **TC-LOGIN-007** | REQ-LOGIN-07 | User logout invalidates session and redirects to login page | Positive / Security | **P1** | High × High = **Critical** | Yes | Not Yet Executed |
-| **TC-LOGIN-008** | REQ-LOGIN-08 | Post-logout browser back button navigation is blocked by session cache headers | Security / Edge | **P1** | High × High = **Critical** | No | Not Yet Executed |
-| **TC-LOGIN-009** | REQ-LOGIN-09 | Username and password leading/trailing whitespace handling during login | Edge / Boundary | **P2** | Medium × High = **High** | Yes | Not Yet Executed |
-| **TC-LOGIN-010** | REQ-LOGIN-10 | Session inactivity timeout forces re-authentication upon subsequent request | Security / Edge | **P1** | High × Medium = **High** | No | Not Yet Executed |
-| **TC-LOGIN-011** | REQ-LOGIN-11 | Maximum input character boundary limit validation on credentials fields | Boundary Value | **P2** | Medium × Low = **Low** | Yes | Not Yet Executed |
-| **TC-LOGIN-012** | REQ-LOGIN-12 | Direct URL deep-linking attempt to protected dashboard without active session | Security / Edge | **P1** | High × High = **Critical** | Yes | Not Yet Executed |
-| **TC-LOGIN-013** | REQ-LOGIN-13 | Password input field masks characters by default with toggle option | Functional / UI | **P2** | Low × Low = **Low** | No | Not Yet Executed |
-| **TC-LOGIN-014** | REQ-LOGIN-14 | Repeated consecutive failed login attempts trigger rate limiting / lockout | Security / Negative | **P1** | High × High = **Critical** | No | Not Yet Executed |
-| **TC-LOGIN-015** | REQ-LOGIN-15 | "Forgot Password" request with non-existent username prevents user enumeration | Security / Negative | **P2** | High × Medium = **High** | No | Not Yet Executed |
+| **TC-LOGIN-001** | REQ-LOGIN-01 | User can log in with valid credentials | Positive (Happy Path) | **P1** | High × Low = **High** | Yes | Pass |
+| **TC-LOGIN-002** | REQ-LOGIN-02 | System rejects invalid username/password with clear error message | Negative | **P1** | High × Medium = **High** | Yes | Pass |
+| **TC-LOGIN-003** | REQ-LOGIN-03 | System blocks submission when username or password field is empty | Boundary / Negative | **P1** | High × Medium = **High** | Yes | Pass |
+| **TC-LOGIN-004** | REQ-LOGIN-04 | System handles script/SQL injection payloads safely without crash or bypass | Security / Edge | **P1** | High × High = **Critical** | Yes | Pass |
+| **TC-LOGIN-005** | REQ-LOGIN-05 | "Forgot Password" flow is reachable and displays expected confirmation step | Positive / Functional | **P2** | Medium × Medium = **Medium** | No | Pass |
+| **TC-LOGIN-006** | REQ-LOGIN-06 | Username and Password fields behave consistently regarding case sensitivity | Edge / Functional | **P2** | Medium × Low = **Medium** | No | Pass |
+| **TC-LOGIN-007** | REQ-LOGIN-07 | User logout invalidates session and redirects to login page | Positive / Security | **P1** | High × High = **Critical** | Yes | Pass |
+| **TC-LOGIN-008** | REQ-LOGIN-08 | Post-logout browser back button navigation is blocked by session cache headers | Security / Edge | **P1** | High × High = **Critical** | No | Pass |
+| **TC-LOGIN-009** | REQ-LOGIN-09 | Username and password leading/trailing whitespace handling during login | Edge / Boundary | **P2** | Medium × High = **High** | Yes | **Fail** | Allowed to log in for `"Admin "` username but refused for `" Admin"` |
+| **TC-LOGIN-010** | REQ-LOGIN-10 | Session inactivity timeout forces re-authentication upon subsequent request | Security / Edge | **P1** | High × Medium = **High** | No | Pass |
+| **TC-LOGIN-011** | REQ-LOGIN-11 | Maximum input character boundary limit validation on credentials fields | Boundary Value | **P2** | Medium × Low = **Low** | Yes | Pass |
+| **TC-LOGIN-012** | REQ-LOGIN-12 | Direct URL deep-linking attempt to protected dashboard without active session | Security / Edge | **P1** | High × High = **Critical** | Yes | Pass |
+| **TC-LOGIN-013** | REQ-LOGIN-13 | Password input field masks characters by default with toggle option | Functional / Security / UI | **P2** | Medium × Low = **Medium** | No | Pass |
+| **TC-LOGIN-014** | REQ-LOGIN-14 | Repeated consecutive failed login attempts trigger rate limiting / lockout | Security / Negative | **P1** | High × High = **Critical** | No | **Fail** | Feature Not Implemented |
+| **TC-LOGIN-015** | REQ-LOGIN-15 | "Forgot Password" request with non-existent username prevents user enumeration | Security / Negative | **P2** | High × Medium = **High** | No | **Fail** |
 
 ---
 
@@ -127,15 +127,19 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 - **Automation Status**: Automated (Playwright E2E)
 - **Pre-conditions**: User is on the Login page.
 - **Test Steps**:
+1. **Sub-case 4a**: 
   1. In `Username` field, input SQL injection payload: `' OR '1'='1' --`.
   2. In `Password` field, input `' OR '1'='1'`. Click `Login`.
-  3. In `Username` field, input XSS script payload: `<script>alert('XSS')</script>`.
-  4. In `Password` field, input `<img src=x onerror=alert(1)>`. Click `Login`.
-- **Test Data**: `' OR '1'='1'`, `' UNION SELECT NULL--`, `<script>alert('XSS')</script>`
 - **Expected Results**:
-  1. System sanitizes/escapes inputs cleanly. No SQL syntax error, stack trace, or database exception leaks to UI.
-  2. Authentication is rejected with standard `"Invalid credentials"` message.
-  3. XSS payload script does NOT execute in browser DOM context.
+  1. No SQL syntax error, stack trace, or database exception leaks to UI. 
+  2. HTTP response is 200/302 (not 500), response body contains no SQL error string or stack trace, and user is not authenticated.
+2. **Sub-case 4b**:
+  1. In `Username` field, input XSS script payload: `<script>alert('XSS')</script>`.
+  2. In `Password` field, input `<img src=x onerror=alert(1)>`. Click `Login`.
+- **Expected Results**:
+  1. Authentication is rejected with standard `"Invalid credentials"` message.
+  2. XSS payload script does NOT execute in browser DOM context.
+- **Test Data**: `' OR '1'='1'`, `<script>alert('XSS')</script>`
 - **Post-conditions**: Application state remains secure and operational.
 
 ---
@@ -288,8 +292,8 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 
 ### TC-LOGIN-013: Password input field masks characters by default with toggle option
 - **Linked Requirement**: REQ-LOGIN-13 (Added High-Priority Case)
-- **Category**: Functional / UI
-- **Priority**: P2 (Impact: Low | Likelihood: Low)
+- **Category**: Functional / Security / UI
+- **Priority**: P2 (Impact: Medium | Likelihood: Low)
 - **Automation Status**: Manual
 - **Pre-conditions**: User is on Login page.
 - **Test Steps**:
@@ -303,7 +307,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 
 ---
 
-### TC-LOGIN-014: Repeated consecutive failed login attempts trigger rate limiting / lockout
+<!-- ### TC-LOGIN-014: Repeated consecutive failed login attempts trigger rate limiting / lockout
 - **Linked Requirement**: REQ-LOGIN-14 (Added High-Priority Case)
 - **Category**: Security / Negative
 - **Priority**: P1 (Impact: High | Likelihood: High)
@@ -316,7 +320,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 - **Expected Results**:
   1. Rate limiting / CAPTCHA / temporary account lock activates after threshold (if configured in OrangeHRM security settings).
   2. Brute force attempts are throttled with appropriate warning banner.
-- **Post-conditions**: Brute-force attacks prevented.
+- **Post-conditions**: Brute-force attacks prevented. -->
 
 ---
 
