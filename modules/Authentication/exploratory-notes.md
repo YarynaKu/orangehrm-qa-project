@@ -46,7 +46,9 @@ Both files are complete and ready. Here's a summary of what was built:
 
 ## 1. TC-LOGIN-004
 *Problem:* The AI merged a SQL-injection check and an XSS check into a single test case with a single ID. If the SQLi assertion passes but the XSS assertion fails, the whole TC will just show 'Fail'. The Test Data field also lists a `' UNION SELECT NULL--` that never appears in any Test Step.
+
 *Before:* TC-LOGIN-004: System handles script/SQL injection payloads safely without crash or bypass. Test Data lists three payloads; only two are used in steps.
+
 *After:* TC is split in two sub-cases with expected results accordindly. Test Data updated.
 - **Test Steps**:
 1. **Sub-case 4a**: 
@@ -65,7 +67,9 @@ Both files are complete and ready. Here's a summary of what was built:
 
 ## 2. TC-LOGIN-013
 *Problem:* Priority contradicts the document's own Risk model in Section 2.
+
 *Before:* P2, Low x Low = Low
+
 *After:*  Impact corrected from Low to Medium, since it's related also to Security check.
 
 ## 3. TC-LOGIN-014 
