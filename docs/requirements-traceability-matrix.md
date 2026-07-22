@@ -15,7 +15,7 @@ updated as cases are executed; currently all are **Not Yet Executed**.
 ## Login / Authentication
  
 | Req ID | Requirement | Source | Priority | Test Case ID(s) | Automated? | Status | Notes |
-|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|
 | REQ-LOGIN-01 | User can log in with valid username and password | Derived | P1 | TC-LOGIN-001 | Y | Pass |
 | REQ-LOGIN-02 | System rejects invalid username/password with a clear error message | Derived | P1 | TC-LOGIN-002 | Y | Pass |
 | REQ-LOGIN-03 | System blocks submission when username or password field is empty | Derived | P1 | TC-LOGIN-003 | Y | Pass |
@@ -35,7 +35,7 @@ updated as cases are executed; currently all are **Not Yet Executed**.
 ## PIM — Employee Management
  
 | Req ID | Requirement | Source | Priority | Test Case ID(s) | Automated? | Status | Notes |
-|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|
 | REQ-PIM-01 | User can add an employee providing only mandatory fields (First/Last name) | Derived | P1 | TC-PIM-001 | Y | **Partly Pass/Fail** | Only First name marked as mandatory field with a star symbol |
 | REQ-PIM-02 | User can add an employee with all optional fields populated, and data persists correctly | *How to use the Employee Management Module [Admin]* | P1 | TC-PIM-002 | Y | **Fail** | Middle name isn't displayed
 | REQ-PIM-03 | System prevents/flags duplicate Employee ID | Derived | P1 | TC-PIM-003 | Y | **Fail** | Allows to create duplicate Employee ID but when searched by Employee id in search list it's shown only the last one |
@@ -48,8 +48,8 @@ updated as cases are executed; currently all are **Not Yet Executed**.
 
 ## Leave — Apply / Approve
  
-| Req ID | Requirement | Source | Priority | Test Case ID(s) | Automated? | Status |
-|---|---|---|---|---|---|---|
+| Req ID | Requirement | Source | Priority | Test Case ID(s) | Automated? | Status | Notes |
+|---|---|---|---|---|---|---|---|
 | REQ-LEAVE-01 | User can apply for leave with a valid date range, and it appears under "My Leave" | *How to use Leave Module* — Apply screen | P1 | TC-LEAVE-001 | Y | Pass |
 | REQ-LEAVE-02 | System rejects a leave application where the end date precedes the start date | Derived | P1 | TC-LEAVE-002 | Y | Pass |
 | REQ-LEAVE-03 | System checks/flags a leave application against the employee's available leave balance ("Check Leave Balance" link) | *How to use Leave Module* | P1 | TC-LEAVE-003 | Y | Pass |
