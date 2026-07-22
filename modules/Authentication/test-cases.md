@@ -35,8 +35,8 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 
 ## 3. Requirements Traceability & Test Case Matrix Summary
 
-| Test Case ID | Req ID | Test Case Title | Category | Priority | Risk (Impact × Likelihood) | Automated? | Status | Notes
-|---|---|---|---|---|---|---|---|
+| Test Case ID | Req ID | Test Case Title | Category | Priority | Risk (Impact × Likelihood) | Automated? | Status | Notes |
+|---|---|---|---|---|---|---|---|---|
 | **TC-LOGIN-001** | REQ-LOGIN-01 | User can log in with valid credentials | Positive (Happy Path) | **P1** | High × Low = **High** | Yes | Pass |
 | **TC-LOGIN-002** | REQ-LOGIN-02 | System rejects invalid username/password with clear error message | Negative | **P1** | High × Medium = **High** | Yes | Pass |
 | **TC-LOGIN-003** | REQ-LOGIN-03 | System blocks submission when username or password field is empty | Boundary / Negative | **P1** | High × Medium = **High** | Yes | Pass |
