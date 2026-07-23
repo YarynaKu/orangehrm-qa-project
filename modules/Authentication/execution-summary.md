@@ -16,8 +16,8 @@
 | Metric | Count |
 |---|---|
 | Total Test Cases | 15 |
-| ✅ Passed | 12 |
-| ❌ Failed | 3 |
+| ✅ Passed | 13 |
+| ❌ Failed | 2 |
 | ⚠️ Blocked | 0 |
 | ⏭️ Skipped | 0 |
 | 🔲 Not Yet Executed | 0 |
@@ -32,9 +32,9 @@
 | Positive (Happy Path) | 2 | 2 | 0 | 0 | 0 |
 | Negative | 2 | 2 | 0 | 0 | 0 |
 | Boundary Value | 3 | 2 | 1 | 0 | 0 |
-| Security / Edge | 5 | 3 | 2 | 0 | 0 |
+| Security / Edge | 5 | 4 | 1 | 0 | 0 |
 | Functional / UI | 3 | 3 | 0 | 0 | 0 |
-| **Total** | **15** | **12** | **3** | **0** | **0** |
+| **Total** | **15** | **13** | **2** | **0** | **0** |
 
 ---
 
@@ -43,9 +43,9 @@
 | Priority | Total TCs | Passed | Failed | Blocked | Not Executed |
 |---|---|---|---|---|---|
 | P1 — Critical | 9 | 8 | 1 | 0 | 0 |
-| P2 — High/Medium | 6 | 4 | 2 | 0 | 0 |
+| P2 — High/Medium | 6 | 5 | 1 | 0 | 0 |
 | P3 — Low | 0 | — | — | — | — |
-| **Total** | **15** | **12** | **3** | **0** | **0** |
+| **Total** | **15** | **13** | **2** | **0** | **0** |
 
 ---
 

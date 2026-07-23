@@ -30,7 +30,7 @@ updated as cases are executed; currently all are **Not Yet Executed**.
 | REQ-LOGIN-12 | Direct deep-link to any protected page without an active session redirects the user to the login page | Derived | P1 | TC-LOGIN-012 | Y | Pass |
 | REQ-LOGIN-13 | Password input field masks characters by default (type="password") to prevent shoulder-surfing | Derived | P2 | TC-LOGIN-013 | N | Pass |
 | ~~REQ-LOGIN-14~~ | ~~Repeated consecutive failed login attempts trigger rate limiting, CAPTCHA, or a temporary account lockout~~ | Derived | P1 | TC-LOGIN-014 | N | **Fail** | Feature not implemented |
-| REQ-LOGIN-15 | "Forgot Password" with a non-existent username returns the same generic confirmation message as a valid request (prevents user enumeration) | Derived | P2 | TC-LOGIN-015 | N | **Fail** |
+| REQ-LOGIN-15 | "Forgot Password" with a non-existent username returns the same generic confirmation message as a valid request (prevents user enumeration) | Derived | P2 | TC-LOGIN-015 | N | Pass |
 
 ## PIM — Employee Management
  

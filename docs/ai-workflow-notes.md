@@ -21,3 +21,6 @@ TC-LOGIN-013
 (See exploratory notes for each module)
 
 TC-LOGIN-014 - Feature Not Implemented
+
+### 3
+Used Claude to generate Bug logs in Github issues linked to TC IDs based on test-cases.md file of those that have status Fail

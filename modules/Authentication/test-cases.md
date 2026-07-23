@@ -51,7 +51,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 | **TC-LOGIN-012** | REQ-LOGIN-12 | Direct URL deep-linking attempt to protected dashboard without active session | Security / Edge | **P1** | High × High = **Critical** | Yes | Pass |
 | **TC-LOGIN-013** | REQ-LOGIN-13 | Password input field masks characters by default with toggle option | Functional / Security / UI | **P2** | Medium × Low = **Medium** | No | Pass |
 | **TC-LOGIN-014** | REQ-LOGIN-14 | Repeated consecutive failed login attempts trigger rate limiting / lockout | Security / Negative | **P1** | High × High = **Critical** | No | **Fail** | Feature Not Implemented |
-| **TC-LOGIN-015** | REQ-LOGIN-15 | "Forgot Password" request with non-existent username prevents user enumeration | Security / Negative | **P2** | High × Medium = **High** | No | **Fail** |
+| **TC-LOGIN-015** | REQ-LOGIN-15 | "Forgot Password" request with non-existent username prevents user enumeration | Security / Negative | **P2** | High × Medium = **High** | No | Pass |
 
 ---
 
