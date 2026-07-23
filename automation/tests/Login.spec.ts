@@ -2,27 +2,6 @@ import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { DashboardPage } from '../pages/DashboardPage';
 
-/**
- * TC-LOGIN-001: User can log in with valid credentials
- *
- * Pre-conditions:
- *   1. Browser is launched and navigated to /web/index.php/auth/login.
- *   2. User is not currently authenticated.
- *
- * Test Steps:
- *   1. Enter valid username (Admin) into the Username input field.
- *   2. Enter valid password (admin123) into the Password input field.
- *   3. Click the Login submit button.
- *
- * Expected Results:
- *   1. System authenticates user successfully.
- *   2. Browser redirects to the Dashboard URL (/web/index.php/dashboard/index).
- *   3. Dashboard header displays user profile widget and main menu items
- *      (Admin, PIM, Leave, etc.).
- *
- * Post-conditions:
- *   Active session cookie ("orangehrm") is set in browser storage.
- */
 
 test.describe('TC-LOGIN-001 - User can log in with valid credentials', () => {
   const VALID_USERNAME = 'Admin';
