@@ -10,15 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.61.1-noble
+    env:
+      HOME: /root
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Install dependencies
       working-directory: ./automation
       run: npm ci
     - name: Run Playwright tests
       working-directory: ./automation
       run: npx playwright test
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v6
       if: ${{ !cancelled() }}
       with:
         name: playwright-report
