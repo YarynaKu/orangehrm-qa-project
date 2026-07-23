@@ -13,7 +13,7 @@ export class DashboardPage {
   constructor(page: Page) {
     this.page = page;
     this.userDropdown = page.locator('.oxd-userdropdown-tab');
-    this.mainMenu = page.locator('.oxd-main-menu').first();
+    this.mainMenu = page.locator('ul.oxd-main-menu');
     this.adminMenuItem = page.getByRole('link', { name: 'Admin' });
     this.pimMenuItem = page.getByRole('link', { name: 'PIM' });
     this.leaveMenuItem = page.getByRole('link', { name: 'Leave' });
