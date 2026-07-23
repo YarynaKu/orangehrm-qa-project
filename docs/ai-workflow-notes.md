@@ -7,8 +7,9 @@ Used Claude to update the Requirement Traceability Matrix against the official O
 
 - REQ-PIM-05: User can search for an employee by partial name/filter and get correctly filtered results.
 - - Reference: How to Access the Employee Management (Supervisor) — filter icon in Employee List 
-- - **Note**: Requrement is not relevant for Demo environment, the supervisor filter icon is not present.
-- REQ-LOGIN-14: Repeated consecutive failed login attempts trigger rate limiting, CAPTCHA, or a temporary account lockout.- - **Note**: Feature is not implemented in Demo environment, marked requirement as out of scope.
+- - **Note**: Requirement is not relevant for Demo environment; the supervisor filter icon is not present.
+- REQ-LOGIN-14: Repeated consecutive failed login attempts trigger rate limiting, CAPTCHA, or a temporary account lockout.
+- - **Note**: Feature is not implemented in Demo environment, marked requirement as out of scope.
 
 
 ### 2 Generating TCs
@@ -25,7 +26,7 @@ Used Claude to generate 15 test cases for login/authentication validation. Revie
 
 ### 3 Generating Bug Logs via MCP Integration
 
-Used MCP to to automatically create GitHub Issues for failed test cases linked directly to test-cases.md .
+Used MCP to automatically create GitHub Issues for failed test cases linked directly to test-cases.md.
 
 **For ex:** 
 - BUG-001, BUG-002 were flagged as Invalid after manual re-verification.
