@@ -1,6 +1,6 @@
 # OrangeHRM QA Project 
 
-This repository contains an **end-to-end testing suite** for **https://automationexercise.com/** website.  
+This repository contains an **end-to-end testing suite** for **https://opensource-demo.orangehrmlive.com/web/index.php/auth/login** website.  
 
 ---
 
