@@ -46,9 +46,7 @@ test.describe('TC-LOGIN-002 - User cannot log in with invalid username', () => {
   const INVALID_USERNAME = 'invalidUser';
   const VALID_PASSWORD = 'admin123';
 
-  test('should display "Invalid credentials" error message @P2 @negative', async ({
-    page,
-  }) => {
+  test('should display "Invalid credentials" error message @P2 @negative', async ({page}) => {
     const loginPage = new LoginPage(page);
 
     await test.step('Navigate to the Login page', async () => {
