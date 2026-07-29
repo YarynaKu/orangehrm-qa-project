@@ -75,6 +75,33 @@ Both files are complete and ready. Here's a summary of what was built:
 ## 3. TC-LOGIN-014 
 *Problem:* Feature Not Implemented
 
+___
+
+## Set up
+Antigravity CLI 1.1.8
+mcp playwright
+
+## Prompt
+As a Senior QA Engineer, create Leave.md test case matrix — positive/negative/edge cases, boundary values for the Leave module. Use TCs from RTM against Req IDs and Test Case IDs and add additional ones that have a high priority,impact if broken and likelihood of failure. Place Leave.md in the folder manual-TCs, create a new folder there Leave. Use the same structure and styling as in Authentication/test-cases.md
+
+## AI response
+
+ I have successfully created the Leave.md test case matrix and placed it in the new manual-TCs/Leave/ directory. 
+                                                                                                                  
+  The document strictly follows the structure and styling of Authentication/test-cases.md. It includes:           
+                                                                                                                  
+  1. Document Header & Executive Summary.                                                                         
+  2. Risk & Impact Prioritization Matrix.                                                                         
+  3. Requirements Traceability & Test Case Matrix Summary with all the RTM cases mapped cleanly in a table.       
+  4. Detailed Test Specifications for 15 test cases.                                                              
+                                                                                                                  
+  I've mapped the original 11 test cases from the RTM (REQ-LEAVE-01 through REQ-LEAVE-11) and added 4 new high-   
+  priority and edge/boundary cases:                                                                               
+                                                                                                                  
+  • TC-LEAVE-012: Apply for leave spanning weekends/holidays (Crucial for payroll/balance integrity).             
+  • TC-LEAVE-013: Mandatory field validation (Missing Leave Type).                                                
+  • TC-LEAVE-014: Apply for partial leave on multiple days (Functional / Boundary calculation check).             
+  • TC-LEAVE-015: Invalid file upload attachment for leave request (Negative scenario).       
 
 
 
