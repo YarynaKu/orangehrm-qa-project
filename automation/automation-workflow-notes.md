@@ -17,6 +17,7 @@ Local run status: **Failed**.
 After manually examining the HTML report, the issue was identified as a strict mode violation on locator('.oxd-main-menu'), which resolved to 2 elements. 
 *Fix*: Updated the locator in DashboardPage.ts to target the main menu list: this.mainMenu = page.locator('ul.oxd-main-menu');
 
+___
 
 ## Set up
 Antigravity CLI 1.1.8
