@@ -1,13 +1,10 @@
-# Test Execution Summary — Login & Authentication Module
+# Test Execution Summary — All Modules (Authentication, PIM, Leave)
 
-**Module**: Login & Authentication  
 **Application**: OrangeHRM Open Source Demo (`https://opensource-demo.orangehrmlive.com`)  
 **Environment**: Public shared demo instance  
 **Author**: Yaryna Kushniruk  
-**Execution Cycle**: #1 — Initial Full Pass  
-**Cycle Start Date**: 2026-07-22   
-**Cycle End Date**: 2026-07-22 
-**Last Updated**: 2026-07-22  
+**Execution Cycle**: #1 — Initial Full Pass (Updated)  
+**Last Updated**: 2026-07-29  
 
 ---
 
@@ -15,13 +12,13 @@
 
 | Metric | Count |
 |---|---|
-| Total Test Cases | 15 |
-| ✅ Passed | 13 |
-| ❌ Failed | 2 |
+| Total Test Cases | 46 |
+| ✅ Passed | 28 |
+| ❌ Failed | 7 |
 | ⚠️ Blocked | 0 |
 | ⏭️ Skipped | 0 |
-| 🔲 Not Yet Executed | 0 |
-| **Pass Rate** | **80%** |
+| 🔲 Not Yet Executed | 11 |
+| **Pass Rate (Executed)** | **80%** (28/35) |
 
 ---
 
@@ -29,12 +26,12 @@
 
 | Category | Total TCs | Passed | Failed | Blocked | Not Executed |
 |---|---|---|---|---|---|
-| Positive (Happy Path) | 2 | 2 | 0 | 0 | 0 |
-| Negative | 2 | 2 | 0 | 0 | 0 |
-| Boundary Value | 3 | 2 | 1 | 0 | 0 |
-| Security / Edge | 5 | 4 | 1 | 0 | 0 |
-| Functional / UI | 3 | 3 | 0 | 0 | 0 |
-| **Total** | **15** | **13** | **2** | **0** | **0** |
+| Positive (Happy Path) | 13 | 8 | 3 | 0 | 2 |
+| Negative | 12 | 6 | 2 | 0 | 4 |
+| Boundary Value | 8 | 3 | 1 | 0 | 4 |
+| Security / Edge | 9 | 7 | 1 | 0 | 1 |
+| Functional / UI | 4 | 4 | 0 | 0 | 0 |
+| **Total** | **46** | **28** | **7** | **0** | **11** |
 
 ---
 
@@ -42,10 +39,10 @@
 
 | Priority | Total TCs | Passed | Failed | Blocked | Not Executed |
 |---|---|---|---|---|---|
-| P1 — Critical | 9 | 8 | 1 | 0 | 0 |
-| P2 — High/Medium | 6 | 5 | 1 | 0 | 0 |
-| P3 — Low | 0 | — | — | — | — |
-| **Total** | **15** | **13** | **2** | **0** | **0** |
+| P1 — Critical | 26 | 18 | 5 | 0 | 3 |
+| P2 — High/Medium | 17 | 9 | 2 | 0 | 6 |
+| P3 — Low | 3 | 1 | 0 | 0 | 2 |
+| **Total** | **46** | **28** | **7** | **0** | **11** |
 
 ---
 
@@ -53,19 +50,25 @@
 
 | Type | Total | Passed | Failed | Blocked | Not Executed |
 |---|---|---|---|---|---|
-| Automated (Playwright E2E) | 8 | 0 | 0 | 0 | 8 |
-| Manual | 7 | 5 | 2 | 0 | 0 |
-| **Total** | **15** | **5** | **2** | **0** | **8** |
+| Automated (Playwright E2E) | 24 | 15 | 5 | 0 | 4 |
+| Manual | 22 | 13 | 2 | 0 | 7 |
+| **Total** | **46** | **28** | **7** | **0** | **11** |
 
 ---
 
 ## 5. Defect Summary
 
-> Bugs are tracked in [GitHub Issues](https://github.com). Link each defect using the `BUG-LOGIN-XXX` format in the table below.
+> Bugs are tracked in GitHub Issues. Link each defect using the standard format.
 
-| Bug ID | Linked TC | Severity | Title | Status |
-|---|---|---|---|---|
-| — | — | — | No defects logged yet | — |
+| Module | Failed TC ID | Description | Status |
+|---|---|---|---|
+| Login | TC-LOGIN-009 | Login accepted for `"Admin "` but rejected for `" Admin"` | Pending |
+| Login | TC-LOGIN-014 | Rate limiting/lockout feature not implemented | Pending |
+| PIM | TC-PIM-001 | Only First Name marked as mandatory | Pending |
+| PIM | TC-PIM-002 | Middle name isn't displayed | Pending |
+| PIM | TC-PIM-003 | System allows creating duplicate Employee ID | Pending |
+| PIM | TC-PIM-006 | Edited details require manual reload to appear | Pending |
+| Leave | TC-LEAVE-005 | User can successfully apply for leave on past dates | Pending |
 
 ---
 
@@ -88,17 +91,14 @@
 ### Entry Criteria
 | Criterion | Status |
 |---|---|
-| Demo environment reachable and login functional (smoke check) | Done |
-| All P1 test cases reviewed against risk table | Done |
-| `test-cases.md` complete and reviewed | Done |
+| Demo environment reachable and core flows functional (smoke check) | Done |
+| All test cases reviewed against risk tables for Login, PIM, Leave | Done |
+| Test matrices (`test-cases.md`, `PIM.md`, `Leave.md`) complete | Done |
 
 ### Exit Criteria
 | Criterion | Status |
 |---|---|
-| All P1 test cases executed (manual or automated) | Only manualy |
+| All P1 test cases executed (manual or automated) | Pending (3 NYE) |
 | All identified bugs logged in GitHub Issues with repro steps | Pending |
-| Automated Playwright suite passing on CI for Login module | Pending |
+| Automated Playwright suite passing on CI for all modules | Pending |
 | Pass rate ≥ 100% on P1 TCs | Pending |
-
-
-
