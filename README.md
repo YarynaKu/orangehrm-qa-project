@@ -10,10 +10,11 @@ The project is built using **Playwright** with **TypeScript** and follows modern
 It covers key Human Resource Management (HRM) user flows, such as:
 - Admin authentication & login workflows
 - Personnel Information Management (PIM) — adding, editing, searching, and deleting employees
+- Leave module
 - Admin module user management and system configurations
 - Access validation across various HRM modules
   
-This project was created as a portfolio project to demonstrate practical test automation skills, framework architecture, and CI/CD integration in enterprise application environments.
+This project was created as a portfolio project to demonstrate practical full STLC and test automation skills, framework architecture, and CI/CD integration in enterprise application environments.
 
 ## Tech Stack
 - Languages: TypeScript
@@ -21,27 +22,14 @@ This project was created as a portfolio project to demonstrate practical test au
 - CI/CD: GitHub Actions
 - IDE: Visual Studio Code
 - Version Control: Git & GitHub
-
-## Test Coverage
-The automated tests verify:
-- User registration and deletion
-- Login with valid credentials
-- Product browsing and product details
-- Search functionality
-- Product categories and brands
-- Adding random products to cart
-- Order placement and invoice download
-- Contact Us form submission
-- Footer subscription
-- Recommended items section
-
+  
 ---
 ## Project Structure
 
 - `.github/workflows/` → GitHub Actions CI/CD workflows;
 - `automation/` → Test suites, spec files, and Playwright configuration;
 - `docs/` → Test Strategy, Requirements Traceability Matrix (RTM), and notes;
-- `modules/` → Manual Test Cases for main application modules;
+- `manual-TCs/` → Manual Test Cases for main application modules;
 
 ## Notes
 Bug reports are located in the GitHub Issues Tab.
@@ -72,6 +60,9 @@ npm install
 
 3. Install Playwright browsers:
 npx playwright install
+
+4. Go to automation folder
+cd ./automation
 
 Run all tests:
 npx playwright test
