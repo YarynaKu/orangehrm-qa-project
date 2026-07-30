@@ -58,7 +58,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 ## 4. Detailed Test Specifications
 
 ### TC-LOGIN-001: User can log in with valid credentials
-- **Linked Requirement**: [REQ-LOGIN-01](file:///Users/yuriikushniruk/Documents/Courses/Testing/orangehrm-qa-project/docs/requirements-traceability-matrix.md#L19)
+- **Linked Requirement**: REQ-LOGIN-01
 - **Category**: Positive (Happy Path)
 - **Priority**: P1 (Impact: High | Likelihood: Low)
 - **Automation Status**: Automated (Playwright E2E)
@@ -79,7 +79,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 ---
 
 ### TC-LOGIN-002: System rejects invalid username/password with clear error message
-- **Linked Requirement**: [REQ-LOGIN-02](file:///Users/yuriikushniruk/Documents/Courses/Testing/orangehrm-qa-project/docs/requirements-traceability-matrix.md#L20)
+- **Linked Requirement**: REQ-LOGIN-02
 - **Category**: Negative
 - **Priority**: P1 (Impact: High | Likelihood: Medium)
 - **Automation Status**: Automated (Playwright E2E)
@@ -102,7 +102,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 ---
 
 ### TC-LOGIN-003: System blocks submission when username or password field is empty
-- **Linked Requirement**: [REQ-LOGIN-03](file:///Users/yuriikushniruk/Documents/Courses/Testing/orangehrm-qa-project/docs/requirements-traceability-matrix.md#L21)
+- **Linked Requirement**: REQ-LOGIN-03
 - **Category**: Boundary Value / Negative
 - **Priority**: P1 (Impact: High | Likelihood: Medium)
 - **Automation Status**: Automated (Playwright E2E)
@@ -121,7 +121,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 ---
 
 ### TC-LOGIN-004: System handles script/SQL injection payloads safely without crash or bypass
-- **Linked Requirement**: [REQ-LOGIN-04](file:///Users/yuriikushniruk/Documents/Courses/Testing/orangehrm-qa-project/docs/requirements-traceability-matrix.md#L22)
+- **Linked Requirement**: REQ-LOGIN-04
 - **Category**: Security / Edge Case
 - **Priority**: P1 (Impact: High | Likelihood: High)
 - **Automation Status**: Automated (Playwright E2E)
@@ -145,7 +145,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 ---
 
 ### TC-LOGIN-005: "Forgot Password" flow is reachable and displays expected confirmation step
-- **Linked Requirement**: [REQ-LOGIN-05](file:///Users/yuriikushniruk/Documents/Courses/Testing/orangehrm-qa-project/docs/requirements-traceability-matrix.md#L23)
+- **Linked Requirement**: REQ-LOGIN-05
 - **Category**: Positive / Functional
 - **Priority**: P2 (Impact: Medium | Likelihood: Medium)
 - **Automation Status**: Manual / API Candidate
@@ -165,7 +165,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 ---
 
 ### TC-LOGIN-006: Username and Password fields behave consistently regarding case sensitivity
-- **Linked Requirement**: [REQ-LOGIN-06](file:///Users/yuriikushniruk/Documents/Courses/Testing/orangehrm-qa-project/docs/requirements-traceability-matrix.md#L24)
+- **Linked Requirement**: REQ-LOGIN-06
 - **Category**: Edge Case / Functional
 - **Priority**: P2 (Impact: Medium | Likelihood: Low)
 - **Automation Status**: Manual
@@ -182,26 +182,27 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 
 ---
 
-### TC-LOGIN-007: User logout invalidates session and redirects to login page
-- **Linked Requirement**: REQ-LOGIN-07 (Added High-Priority Case)
-- **Category**: Positive / Security
+### TC-LOGIN-007: User logout invalidates session and ensure session tokens are stored securely
+- **Linked Requirement**: REQ-LOGIN-07
+- **Category**: Negative / Security
 - **Priority**: P1 (Impact: High | Likelihood: High)
-- **Automation Status**: Automated (Playwright E2E)
-- **Pre-conditions**: User is logged in and currently viewing the Dashboard page.
+- **Automation Status**: Manual
+- **Pre-conditions**: User is logged in.
 - **Test Steps**:
-  1. Click on user dropdown menu in top right header corner.
-  2. Click `"Logout"` option from dropdown menu.
+  1. Open DevTools->Application Tab->Cookies
+- **Expected Results**:
+Verify the orangehrm session cookie has the HttpOnly and Secure flags set.
+  2. Copy the session cookie value while logged in.
+  3. Click on user dropdown menu in top right header corner and click `"Logout"` option from dropdown menu.
+  4. Attempt to manually re-add the copied cookie into Application -> Cookies and refresh the page.
 - **Test Data**: N/A
 - **Expected Results**:
-  1. Session token/cookie is cleared.
-  2. User is immediately redirected to Login page (`/web/index.php/auth/login`).
-  3. Attempting to access protected URLs (`/dashboard/index`) redirects back to login page.
-- **Post-conditions**: User session terminated completely.
+The user remains on the login screen (session destroyed on server).
 
 ---
 
 ### TC-LOGIN-008: Post-logout browser back button navigation is blocked by session cache headers
-- **Linked Requirement**: REQ-LOGIN-08 (Added High-Priority Case)
+- **Linked Requirement**: REQ-LOGIN-08 
 - **Category**: Security / Edge Case
 - **Priority**: P1 (Impact: High | Likelihood: High)
 - **Automation Status**: Manual
@@ -237,7 +238,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 ---
 
 ### TC-LOGIN-010: Session inactivity timeout forces re-authentication upon subsequent request
-- **Linked Requirement**: REQ-LOGIN-10 (Added High-Priority Case)
+- **Linked Requirement**: REQ-LOGIN-10 
 - **Category**: Security / Edge Case
 - **Priority**: P1 (Impact: High | Likelihood: Medium)
 - **Automation Status**: Manual
@@ -254,7 +255,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 ---
 
 ### TC-LOGIN-011: Maximum input character boundary limit validation on credentials fields
-- **Linked Requirement**: REQ-LOGIN-11 (Added High-Priority Case)
+- **Linked Requirement**: REQ-LOGIN-11
 - **Category**: Boundary Value
 - **Priority**: P2 (Impact: Medium | Likelihood: Low)
 - **Automation Status**: Automated (Playwright E2E)
@@ -273,7 +274,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 ---
 
 ### TC-LOGIN-012: Direct URL deep-linking attempt to protected dashboard without active session
-- **Linked Requirement**: REQ-LOGIN-12 (Added High-Priority Case)
+- **Linked Requirement**: REQ-LOGIN-12
 - **Category**: Security / Edge Case
 - **Priority**: P1 (Impact: High | Likelihood: High)
 - **Automation Status**: Automated (Playwright E2E)
@@ -291,7 +292,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 ---
 
 ### TC-LOGIN-013: Password input field masks characters by default with toggle option
-- **Linked Requirement**: REQ-LOGIN-13 (Added High-Priority Case)
+- **Linked Requirement**: REQ-LOGIN-13 
 - **Category**: Functional / Security / UI
 - **Priority**: P2 (Impact: Medium | Likelihood: Low)
 - **Automation Status**: Manual
@@ -325,7 +326,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 ---
 
 ### TC-LOGIN-015: "Forgot Password" request with non-existent username prevents user enumeration
-- **Linked Requirement**: REQ-LOGIN-15 (Added High-Priority Case)
+- **Linked Requirement**: REQ-LOGIN-15 
 - **Category**: Security / Negative
 - **Priority**: P2 (Impact: High | Likelihood: Medium)
 - **Automation Status**: Manual
@@ -338,3 +339,71 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
   1. System returns a generic success/confirmation message identical to valid requests (e.g. `"If the username exists, a reset link has been sent"`).
   2. System does NOT disclose whether `NonExistentUser999` exists in database (prevents user enumeration attack).
 - **Post-conditions**: Application prevents credential harvesting.
+
+---
+
+### TC-LOGIN-016: ESS User can't perform Admin-only actions by direct URL deep-linking attempt
+- **Linked Requirement**: REQ-LOGIN-12
+- **Category**: Security / Edge Case
+- **Priority**: P1 (Impact: High | Likelihood: High)
+- **Automation Status**: Automated (Playwright E2E)
+- **Pre-conditions**: Logged in as Admin user.
+- **Test Steps**:
+  1. Go to Admin-only page (https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers)
+  2. Copy the full URL
+  3. Log out, then log in as ESS User.
+  4. Pass the Url directly into the address bar.
+  5. Press Enter.
+- **Test Data**: Protected URL: `web/index.php/admin/viewSystemUsers`
+- **Expected Results**:
+'Credential Required' warning message appears.
+
+---
+
+### TC-LOGIN-017: Verify Authentication State & Sensitive Data Exposure via API Requests
+- **Linked Requirement**: REQ-LOGIN
+- **Category**: Security
+- **Priority**: P1 (Impact: High | Likelihood: High)
+- **Automation Status**: Manual
+- **Pre-conditions**: User is authenticated and logged into the application with an active session.
+- **Test Steps**:
+  1. Open DevTools and navigate to the Network tab. Ensure Preserve log is checked.
+  2. Filter the requests by XHR/Fetch (or Fetch/XHR filter).
+  3. Perform a target application action that fetches data (e.g., navigate to Employee List).
+  4. Select the primary API request generated by the action and inspect the Headers tab.
+- **Expected Results**:
+- Authorization tokens/credentials are transmitted via secure headers(Authorization: Bearer <token> or secure HTTP-only cookies).
+- Tokens or session IDs are NOT present in GET URL query parameters (e.g., ?token=12345 or ?session_id=abc).
+  5. Inspect the Response (or Preview) tab for the selected request.
+- **Expected Results**:
+- Response payload contains only data necessary for the UI display.
+- Sensitive fields (e.g., SSNs, full salaries, password hashes, internal roles) are NOT returned in the JSON payload, even if visually hidden by CSS/JS in the UI.
+
+### TC-LOGIN-018: Verify Session Desynchronization Handling Across Multiple Browser Tabs
+- **Linked Requirement**: REQ-LOGIN
+- **Category**: Edge Case
+- **Priority**: P1 (Impact: Medium | Likelihood: High)
+- **Automation Status**: Manual
+- **Pre-conditions**: 
+- A valid user account exists with permissions to edit employee profiles.
+- User is logged into the application.
+- **Test Steps**:
+  1. Open a new tab (Tab 1), navigate to the application, and log in.
+  2. Open a second tab (Tab 2) in the same browser window and navigate to an editable page (e.g., an Employee Profile Edit form).
+  3. Make a minor change in the edit form on Tab 2 (e.g., update job title or contact details), but do not click Save yet.
+  4. Switch to Tab 1 and click Logout.
+- **Expected Results**:
+Session is invalidated; Tab 1 redirects to the Login screen.
+  5. Switch back to Tab 2 and click the Save button on the modified form.
+- **Expected Results**:
+The application gracefully prevents the save action:
+- Data is not committed or corrupted on the server.
+- User is prompted with a clear session timeout/re-login message or redirected to the Login page.
+- User is not exposed to unhandled 500 Internal Server Error screens or raw code exceptions.
+  6. Re-log into the application and check the target employee profile.
+- **Expected Results**:
+Profile data remains uncorrupted and retains its original values prior to the unauthorized save attempt.
+
+
+
+
