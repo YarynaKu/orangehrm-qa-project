@@ -59,7 +59,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 
 ### TC-LOGIN-001: User can log in with valid credentials
 - **Linked Requirement**: REQ-LOGIN-01
-- **Category**: Positive (Happy Path)
+- **Category**: Positive
 - **Priority**: P1 (Impact: High | Likelihood: Low)
 - **Automation Status**: Automated (Playwright E2E)
 - **Pre-conditions**:
