@@ -74,7 +74,7 @@ Investigate whether Middle Name is:
 
 
 # Title
-[BUG-005] Duplicate Employee ID is not blocked; search only shows the most recently created record
+[BUG-005] Duplicate Employee ID is not blocked while editing; search only shows the most recently created record
 
 ## Bug Report
 
@@ -100,13 +100,12 @@ The system does not prevent creating a new employee with an **Employee Id** that
 
 ## Steps to Reproduce
 
-**Pre-condition:** An employee with **Employee Id 0038** already exists (e.g., "Mary Smith").
+**Pre-condition:** An employee with **Employee Id 0312** already exists (e.g., "Mary Smith").
 
-1. Navigate to PIM > Add Employee.
-2. Enter **First Name** and **Last Name** (e.g "Bob Smith").
-3. Enter **0038** into the **Employee Id** field.
+1. Navigate to the Personal Details page of an existing employee (e.g., "Bob Smith").
+2. Modify **Employee Id** to an existing one (e.g., "O189" -> "0312").
 4. Click **Save**.
-5. Navigate to PIM > Employee List and search by **Employee Id 0038**.
+5. Navigate to PIM > Employee List and search by **Employee Id 0312**.
 
 
 ---
@@ -116,14 +115,14 @@ The system does not prevent creating a new employee with an **Employee Id** that
 Per REQ-PIM-03:
 - Submission is blocked before save.
 - An inline validation error, "Employee Id already exists", is shown.
-- No duplicate record is created — searching 0038 continues to return only the original employee.
+- No duplicate record is created — searching 0312 continues to return only the original employee.
 
 ---
 
 ## Actual Result
 
-- Save with duplicate Employee Id 0038 succeeds — no validation error shown
-- Search Employee List by ID 0038 only shows the newest record ("Bob Smith")
+- Save with duplicate Employee Id 0312 succeeds — no validation error shown
+- Search Employee List by ID 0312 only shows the newest record ("Bob Smith")
 
 ---
 
