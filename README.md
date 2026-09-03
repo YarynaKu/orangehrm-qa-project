@@ -1,77 +1,71 @@
-# OrangeHRM QA Project 
+# E2E OrangeHRM QA Project 
 
-This repository contains an **end-to-end testing suite** for **https://opensource-demo.orangehrmlive.com/web/index.php/auth/login** website.  
+A complete QA process — test strategy, test plan, manual test cases, exploratory testing, and Playwright/TypeScript automation with CI — built against the [OrangeHRM Open Source Demo](https://opensource-demo.orangehrmlive.com), an HR management web application.
+ 
+This project exists to demonstrate a full QA workflow end to end: designing a test strategy, prioritizing coverage by risk, writing and executing test cases, automating regression checks, and tracking defects — the way I'd approach testing a real product.
 
----
+## Results Snapshot
+ 
+| Metric | Value |
+|---|---|
+| Modules covered | Authentication, PIM (Employee Management), Leave |
+| Total test cases | 46 (24 automated, 22 manual) |
+| Pass rate (executed) | 80% (28/35) |
+| Defects found | 7 |
+| CI | Runs on every push via GitHub Actions |
 
-## About the Project
-The project is built using **Playwright** with **TypeScript** and follows modern QA standards including Test Strategy planning, Requirements Traceability Matrix (RTM), and automated CI/CD integration.
-
-It covers key Human Resource Management (HRM) user flows, such as:
-- Admin authentication & login workflows
-- Personnel Information Management (PIM) — adding, editing, searching, and deleting employees
-- Leave module
-- Admin module user management and system configurations
-- Access validation across various HRM modules
-  
-This project was created as a portfolio project to demonstrate practical full STLC and test automation skills, framework architecture, and CI/CD integration in enterprise application environments.
+Full results: [`docs/execution-summary.md`](docs/execution-summary.md)
 
 ## Tech Stack
-- Languages: TypeScript
-- Testing Framework: Playwright
-- CI/CD: GitHub Actions
-- IDE: Visual Studio Code
-- Version Control: Git & GitHub
-  
----
+
+- **Automation**: Playwright + TypeScript, Page Object Model
+- **CI**: GitHub Actions
+- **Bug tracking**: GitHub Issues
+- **AI-assisted scaffolding**: Claude — usage logged transparently in [`docs/ai-workflow-notes.md`](docs/ai-workflow-notes.md)
+
 ## Project Structure
 
-- `.github/workflows/` → GitHub Actions CI/CD workflows;
-- `automation/` → Test suites, spec files, and Playwright configuration;
-- `docs/` → Test Strategy, Requirements Traceability Matrix (RTM), and notes;
-- `manual-TCs/` → Manual Test Cases for main application modules;
+```
+├── docs/
+│   ├── test-strategy.md       # scope, risk-based prioritization, tools
+│   ├── test-plan.md           # entry/exit criteria, planned coverage
+│   └── ai-workflow-notes.md   # where/how AI was used
+│   ├── execution-summary.md   # results, metrics, defect summary
+├── modules/
+│   ├── Login/Login.md
+│   ├── PIM/PIM.md
+│   └── Leave/Leave.md
+├── automation/
+│   └── tests/                 # Playwright specs (e.g. Login.spec.ts)
+└── .github/workflows/
+    └── playwright.yml         # CI pipeline
+```
 
-## Notes
-Bug reports are located in the GitHub Issues Tab.
-
----
-
-## About Me
-
-I'm a dedicated QA Engineer with experience in web application testing and data validation using SQL. Skilled in creating, executing, and maintaining manual and automated test cases. Proficient in error analysis, documentation, and tracking throughout the entire error resolution process. 
-After a career break, I've refreshed and expanded my skills using **Playwright**, creating **robust automation frameworks**, and improving QA processes to deliver **reliable, bug-free products**.  
-
-
-### Contact Me
-- Email: yarynakushniruk@gmail.com
-- LinkedIn: https://www.linkedin.com/in/yaryna-kushniruk-964425b0/
-
----
-
-## Installation & Running Tests
+## Getting Started
 
 ```bash
-1. Clone the repository:
 git clone https://github.com/YarynaKu/orangehrm-qa-project.git
-cd orange-qa-project
-
-2. Install dependencies:
+cd orange-qa-project/automation
 npm install
-
-3. Install Playwright browsers:
-npx playwright install
-
-4. Go to automation folder
-cd ./automation
-
-Run all tests:
 npx playwright test
+```
 
-Run tests in UI mode:
-npx playwright test --headed
-
-Run a specific test file:
-npx playwright test tests/Login.spec.ts
-
-View test report:
+```bash
 npx playwright show-report
+```
+
+## Notable Findings
+ 
+- **[BUG-003](https://github.com/YarynaKu/orangehrm-qa-project/issues/1)** — the login form trims trailing whitespace from the username but not leading whitespace, causing inconsistent authentication behavior for otherwise-identical inputs.
+- Full defect list in [`docs/execution-summary.md`](manual-TCs/execution-summary.md).
+
+## Documentation
+ 
+- [Test Strategy](docs/test-strategy.md) — approach, scope, risk-based prioritization
+- [Test Plan](docs/test-plan.md) — entry/exit criteria, planned coverage
+- [Execution Summary](docs/execution-summary.md) — results and defects
+- [AI Workflow Notes](docs/ai-workflow-notes.md) — how AI tooling was used and overridden
+
+## Author
+ 
+**Yaryna Kushniruk** — QA Engineer
