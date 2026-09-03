@@ -11,7 +11,7 @@ This project exists to demonstrate a full QA workflow end to end: designing a te
 | Modules covered | Authentication, PIM (Employee Management), Leave |
 | Total test cases | 46 (24 automated, 22 manual) |
 | Pass rate (executed) | 80% (28/35) |
-| Defects found | 7 |
+| Defects found | 6 |
 | CI | Runs on every push via GitHub Actions |
 
 Full results: [`docs/execution-summary.md`](docs/execution-summary.md)
