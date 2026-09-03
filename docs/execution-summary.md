@@ -13,12 +13,12 @@
 | Metric | Count |
 |---|---|
 | Total Test Cases | 46 |
-| ✅ Passed | 28 |
-| ❌ Failed | 7 |
+| ✅ Passed | 29 |
+| ❌ Failed | 6 |
 | ⚠️ Blocked | 0 |
 | ⏭️ Skipped | 0 |
 | 🔲 Not Yet Executed | 11 |
-| **Pass Rate (Executed)** | **80%** (28/35) |
+| **Pass Rate (Executed)** | **80%** (29/35) |
 
 ---
 
@@ -26,12 +26,12 @@
 
 | Category | Total TCs | Passed | Failed | Blocked | Not Executed |
 |---|---|---|---|---|---|
-| Positive (Happy Path) | 13 | 8 | 3 | 0 | 2 |
+| Positive (Happy Path) | 13 | 9 | 2 | 0 | 2 |
 | Negative | 12 | 6 | 2 | 0 | 4 |
 | Boundary Value | 8 | 3 | 1 | 0 | 4 |
 | Security / Edge | 9 | 7 | 1 | 0 | 1 |
 | Functional / UI | 4 | 4 | 0 | 0 | 0 |
-| **Total** | **46** | **28** | **7** | **0** | **11** |
+| **Total** | **46** | **29** | **6** | **0** | **11** |
 
 ---
 
@@ -39,10 +39,10 @@
 
 | Priority | Total TCs | Passed | Failed | Blocked | Not Executed |
 |---|---|---|---|---|---|
-| P1 — Critical | 26 | 18 | 5 | 0 | 3 |
+| P1 — Critical | 26 | 19 | 4 | 0 | 3 |
 | P2 — High/Medium | 17 | 9 | 2 | 0 | 6 |
 | P3 — Low | 3 | 1 | 0 | 0 | 2 |
-| **Total** | **46** | **28** | **7** | **0** | **11** |
+| **Total** | **46** | **29** | **6** | **0** | **11** |
 
 ---
 
@@ -50,9 +50,9 @@
 
 | Type | Total | Passed | Failed | Blocked | Not Executed |
 |---|---|---|---|---|---|
-| Automated (Playwright E2E) | 24 | 15 | 5 | 0 | 4 |
+| Automated (Playwright E2E) | 24 | 16 | 4 | 0 | 4 |
 | Manual | 22 | 13 | 2 | 0 | 7 |
-| **Total** | **46** | **28** | **7** | **0** | **11** |
+| **Total** | **46** | **29** | **6** | **0** | **11** |
 
 ---
 
@@ -64,7 +64,6 @@
 |---|---|---|---|
 | Login | TC-LOGIN-009 | Login accepted for `"Admin "` but rejected for `" Admin"` | Pending |
 | Login | TC-LOGIN-014 | Rate limiting/lockout feature not implemented | Pending |
-| PIM | TC-PIM-001 | Only First Name marked as mandatory | Pending |
 | PIM | TC-PIM-002 | Middle name isn't displayed | Pending |
 | PIM | TC-PIM-003 | System allows creating duplicate Employee ID | Pending |
 | PIM | TC-PIM-006 | Edited details require manual reload to appear | Pending |

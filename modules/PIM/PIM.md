@@ -37,7 +37,7 @@ $$\text{Risk} = \text{Impact if Broken} \times \text{Likelihood of Failure}$$
 
 | Test Case ID | Req ID | Test Case Title | Category | Priority | Risk (Impact × Likelihood) | Automated? | Status | Notes |
 |---|---|---|---|---|---|---|---|---|
-| **TC-PIM-001** | REQ-PIM-01 | Add employee with only mandatory fields | Positive | **P1** | High × Low = **High** | Yes | **Partly Pass/Fail** | Only First name marked as mandatory |
+| **TC-PIM-001** | REQ-PIM-01 | Add employee with only mandatory fields | Positive | **P1** | High × Low = **High** | Yes | **Pass** |  |
 | **TC-PIM-002** | REQ-PIM-02 | Add employee with all optional fields | Positive | **P1** | High × Low = **High** | Yes | **Fail** | Middle name isn't displayed |
 | **TC-PIM-003** | REQ-PIM-03 | Prevent duplicate Employee ID | Negative | **P1** | High × Medium = **High** | Yes | **Fail** | Allows creation but search only shows the last one |
 | **TC-PIM-004** | REQ-PIM-04 | Inline validation for missing mandatory fields | Negative | **P1** | High × Low = **High** | Yes | Pass | |
