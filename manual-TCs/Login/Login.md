@@ -1,18 +1,18 @@
-# Test Case Matrix — Login & Authentication Module
+# Test Case Matrix — Login Module
 
-**Module**: Login & Authentication  
+**Module**: Login 
 **Application**: OrangeHRM Open Source Demo (`https://opensource-demo.orangehrmlive.com`)  
 **Author**: Yaryna Kushniruk  
-**Last Updated**: 2026-07-22  
+**Last Updated**: 2026-07-30  
 **Status**: Active / Ready for Execution  
 
 ---
 
 ## 1. Executive Summary & Module Overview
 
-The **Login & Authentication** module serves as the primary gatekeeper for the OrangeHRM application. Security, reliability, and proper session state handling in this module are essential to protect corporate HR data and control role-based system access.
+The **Login** module serves as the primary gatekeeper for the OrangeHRM application. Security, reliability, and proper session state handling in this module are essential to protect corporate HR data and control role-based system access.
 
-This Test Case Matrix covers end-to-end authentication testing including:
+This Test Case Matrix covers end-to-end authentication and authorization testing including:
 - **Positive Scenarios**: Standard valid authentication, logout flows, and session establishment.
 - **Negative Scenarios**: Invalid credential combinations, empty field validations, and non-existent user password resets.
 - **Boundary Value Scenarios**: Extreme input string lengths (min/max boundary limits) and field constraints.
