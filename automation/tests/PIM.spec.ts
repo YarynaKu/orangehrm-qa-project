@@ -149,7 +149,7 @@ test.describe('PIM Employee Management', () => {
     currentLastName = '';
   });
 
-  test.only('TC-PIM-006 - Edit an existing employee\'s personal details @P2 @positive', async ({ page }) => {
+  test('TC-PIM-006 - Edit an existing employee\'s personal details @P2 @positive', async ({ page }) => {
     currentFirstName = faker.person.firstName();
     currentLastName = faker.person.lastName();
     const updatedMiddleName = faker.person.middleName();
