@@ -1,9 +1,10 @@
 {
   "devDependencies": {
+    "@faker-js/faker": "^10.6.0",
     "@playwright/test": "^1.61.1",
     "@types/node": "^26.1.1"
   },
   "scripts": {
-	"build": "tsc"
-}
+    "build": "tsc"
+  }
 }
